@@ -1,0 +1,35 @@
+
+    <% if user_signed_in? %>
+    <div class="with-padding">
+      <div class="container">
+
+         <h1>Welcome! <%= current_user.name %></h1>
+
+
+      </div>
+    </div>
+
+    <%else%>
+       <header class="intro-header">
+          <div class="container">
+            <div class="intro-message">
+              <h1><i class="fa fa-bug fa-fw"></i>Bugzilla</h1>
+              <h2>The bug portal for your projects</h2>
+              <h5>Choose your designation and get started!</h5>
+              <hr class="intro-divider">
+              <ul class="list-inline intro-social-buttons">
+                <li class="list-inline-item">
+                  <%= link_to "Developer", new_user_registration_path, class: "btn btn-secondary btn-lg btn-success" %>
+                </li>
+                <li class="list-inline-item">
+                  <%= link_to "Manager", new_user_registration_path, class: "btn btn-secondary btn-lg btn-success" %>
+                </li>
+                <li class="list-inline-item">
+                  <%= link_to "Quality Assurance", new_user_registration_path, class: "btn btn-secondary btn-lg btn-success" %>
+                </li>
+              </ul>
+              <h5>Already a member? <%= link_to('Login', new_user_session_path, class: "btn btn-success")  %></h5>
+            </div>
+          </div>
+      </header>
+    <%end%>
